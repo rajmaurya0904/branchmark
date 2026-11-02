@@ -20,7 +20,12 @@ pip install -e ".[dev]"
 
 ## How it works
 
-<!-- 3-6 bullets: what it checks, computes or produces. -->
+- Queries GitHub Actions workflow runs via the GitHub REST API to fetch recent job and test execution data.
+- Stores fetched run metadata in an in‑memory cache for quick access by the MCP server.
+- Analyzes historical test outcomes to calculate a flakiness score for each test case.
+- Exposes an MCP endpoint that returns live run details and flakiness metrics to AI assistants.
+- Updates the cache periodically and on webhook triggers to keep data fresh.
+- Emits JSON‑serialisable results that can be consumed by any client supporting the Model Context Protocol.
 
 ## Limitations
 
