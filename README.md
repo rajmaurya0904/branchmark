@@ -29,7 +29,9 @@ pip install -e ".[dev]"
 
 ## Limitations
 
-<!-- Honest and short: what it does NOT do, known gaps. -->
+- **API rate limits:** All data is fetched through the GitHub REST API, which is rate-limited to 5,000 requests per hour per authenticated token. Heavy use (many repos, frequent refreshes) can exhaust this quota; BranchMark does not implement request batching or backoff beyond what the API client provides.
+- **Private repositories:** Accessing private repos requires a personal access token with the `repo` scope. Without a valid token, only public repositories are reachable, and any private repo queries will fail with a 404.
+- **Artifact retention:** GitHub Actions artifacts are deleted after 90 days by default (configurable per repository). Historical flakiness data older than the retention window is unrecoverable, so long-term trend analysis is bounded by your artifact retention policy.
 
 ## Development
 
