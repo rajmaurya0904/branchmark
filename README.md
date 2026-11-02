@@ -2,7 +2,7 @@
 
 **An MCP server that lets AI coding assistants query live CI test execution metrics and historical flakiness data directly from GitHub Actions.**
 
-<!-- THE PROBLEM: 2-3 concrete lines on the annoying thing this removes. -->
+When AI coding assistants refactor code or fix bugs, they operate blind to how tests actually behave in CI, guessing whether a failure is a real regression or just transient infrastructure flakiness. BranchMark bridges this gap by exposing live workflow runs, job execution times, and historical test failure patterns directly through the Model Context Protocol. No more switching contexts to GitHub or guessing why CI failed.
 
 ## Example
 
